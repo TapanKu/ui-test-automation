@@ -19,8 +19,7 @@ public class ChromeOptionsReader {
             Map<String, Object> data = yaml.load(inputStream);
             Map<String, Object> chromeData = (Map<String, Object>) data.get("chrome");
             Map<String, Object> optionsData = (Map<String, Object>) chromeData.get("options");
-            List<String> arguments = (List<String>) optionsData.get("arguments");
-            return arguments;
+            return (List<String>) optionsData.get("arguments");
         } catch (Exception e) {
             throw new RuntimeException("Error reading chrome options from YAML", e);
         }
