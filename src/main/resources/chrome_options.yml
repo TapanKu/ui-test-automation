@@ -1,0 +1,15 @@
+# chrome_options.yml
+
+chrome:
+  options:
+    arguments:
+      - "--no-sandbox"
+      - "--disable-dev-shm-usage"
+      - "--remote-allow-origins=*"
+      - "--disable-gpu"
+      - "--disable-software-rasterizer"
+      - "--disable-extensions"
+      - "--disable-dev-tools"
+      - "--disable-browser-side-navigation"
+      - "--disable-infobars"
+      - "--headless"
