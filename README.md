@@ -61,8 +61,9 @@ It's built using Java, Selenium WebDriver, Cucumber, JUnit, and Maven.
 *   To run tests in headless mode (without a visible browser window), ensure that the `--headless` argument is present in the `chrome_options.yml` file:
 ```yaml
    - "--headless"
-    ```
-* To run with visible browser, remove this argument from `chrome_options.yml`.
+```
+ *   To run with visible browser, remove this argument from `chrome_options.yml`.
+
 ## Running Tests with Tags
 
 You can run specific scenarios or features based on tags. Here are some examples:
