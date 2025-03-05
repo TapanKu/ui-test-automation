@@ -1,10 +1,12 @@
 package org.mytest.pages;
 
+import org.mytest.helperUtils.CustomWebElement;
 import org.mytest.helperUtils.Driver;
 import org.mytest.helperUtils.WaitUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 import java.util.List;
 import java.util.Map;
 
@@ -107,7 +109,7 @@ public class HomePage extends BasePage {
     }
 
     public String getOrderConfirmationMessage() {
-        WebElement confirmationMessage = Driver.getDriver().findElement(By.xpath("//*[contains(text(), 'Thank you for your order!')]"));
-        return waitUtils.waitForElementToBeVisible(confirmationMessage).getText();
+        CustomWebElement confirmationMessage = customDriver.findElement(By.xpath("//*[contains(text(), 'Thank you for your order!')]"));
+        return confirmationMessage.getText();
     }
 }
