@@ -64,7 +64,7 @@ Feature: SauceDemo Login
       | Sauce Labs Bike Light |
 
   @test_06 @regression
-  Scenario: Verify items in cart after relogin
+  Scenario: Verify checkout process
     Given I login with username "standard_user" and password "secret_sauce"
     And I add the following items to the cart:
       | itemName            |

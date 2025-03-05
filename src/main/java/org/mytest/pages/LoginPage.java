@@ -25,10 +25,6 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//*[contains(@class, 'error-message-container')]")
     private WebElement errorMessage;
 
-    public void navigateToApp(String url) {
-        Driver.getDriver().get(url);
-    }
-
     public void login(String userName, String passWord) {
         waitUtils.waitForElementToBeVisible(username).sendKeys(userName);
         waitUtils.waitForElementToBeVisible(password).sendKeys(passWord);
