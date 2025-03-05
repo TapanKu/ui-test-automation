@@ -56,7 +56,7 @@ It's built using Java, Selenium WebDriver, Cucumber, JUnit, and Maven.
     *   Modify the `url` property to select the application url to use.
     
 ## Chrome Options Configuration
-*   **The `chrome_options.yml` file, located in `src/main/resources/`, allows you to customize Chrome browser options.
+*   The `chrome_options.yml` file, located in `src/main/resources/`, allows you to customize Chrome browser options.
 *   **Headless Mode:**
 *   To run tests in headless mode (without a visible browser window), ensure that the `--headless` argument is present in the `chrome_options.yml` file:
 ```yaml
