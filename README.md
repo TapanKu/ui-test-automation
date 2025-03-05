@@ -51,7 +51,7 @@ It's built using Java, Selenium WebDriver, Cucumber, JUnit, and Maven.
 ## Configuration
 
 1.  **`config.properties`:**
-    *   This file is located in `src/test/resources` folder.
+    *   This file is located in the project's root directory.
     *   Modify the `browser` property to select the browser you want to use (`chrome` or `firefox`).
     *   Modify the `url` property to select the application url to use.
 
