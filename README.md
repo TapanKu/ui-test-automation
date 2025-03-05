@@ -1,6 +1,6 @@
 # SauceDemo Test Automation Framework
 
-This project provides an automated test framework for the [SauceDemo](https://www.saucedemo.com/) e-commerce website. This project is hosted on [GitHub](https://github.com/TapanKu/saucedemo-test-automation).
+This project provides an automated test framework for the [SauceDemo](https://www.saucedemo.com/) e-commerce website. This project is hosted on [GitHub](https://github.com/TapanKu/ui-test-automation).
 It's built using Java, Selenium WebDriver, Cucumber, JUnit, and Maven.
 
 ## Features
