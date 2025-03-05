@@ -10,7 +10,6 @@ import org.mytest.helperUtils.Logger;
 import org.mytest.pages.HomePage;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-
 import java.io.File;
 
 public class Hooks {

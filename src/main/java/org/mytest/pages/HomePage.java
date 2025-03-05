@@ -1,12 +1,10 @@
 package org.mytest.pages;
 
-//import org.junit.Assert;
 import org.mytest.helperUtils.Driver;
 import org.mytest.helperUtils.WaitUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.List;
 import java.util.Map;
 
@@ -43,7 +41,7 @@ public class HomePage extends BasePage {
     private WebElement finishButton;
 
     public void logout() {
-        if(menu_btn.isDisplayed()){
+        if (menu_btn.isDisplayed()) {
             waitUtils.waitForElementToBeClickable(menu_btn).click();
             waitUtils.waitForElementToBeClickable(logoutButton).click();
         }
@@ -58,10 +56,11 @@ public class HomePage extends BasePage {
         WebElement addToCartButton = Driver.getDriver().findElement(By.xpath(xpath));
         waitUtils.waitForElementToBeClickable(addToCartButton).click();
     }
+
     public void addItemsToCart(List<String> items) {
-            if (items.size() > 1) {
-                items.subList(1, items.size()).forEach(this::addItemToCart);
-            }
+        if (items.size() > 1) {
+            items.subList(1, items.size()).forEach(this::addItemToCart);
+        }
 
 
     }
@@ -89,18 +88,6 @@ public class HomePage extends BasePage {
                 String xpath = String.format("//div[@class='cart_item']//div[@class='inventory_item_name'][text()='%s']", itemName);
                 WebElement item = Driver.getDriver().findElement(By.xpath(xpath));
                 waitUtils.waitForElementToBeVisible(item);
-            });
-        }
-    }
-
-
-
-    public void verifyItemsNotPresentInCart(List<String> items) {
-        if (items.size() > 1) {
-            items.subList(1, items.size()).forEach(itemName -> {
-                String xpath = String.format("//div[@class='cart_item']//div[@class='inventory_item_name'][text()='%s']", itemName);
-                List<WebElement> itemElements = Driver.getDriver().findElements(By.xpath(xpath));
-//                Assert.assertTrue("Item " + itemName + " should not be present in the cart", itemElements.isEmpty());
             });
         }
     }

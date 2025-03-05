@@ -10,7 +10,8 @@ public class BasePage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-    public void navigateToApp(String url){
+
+    public void navigateToApp(String url) {
         driver.get(url);
     }
 

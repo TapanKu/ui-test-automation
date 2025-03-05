@@ -12,7 +12,7 @@ public class ChromeOptionsReader {
             Yaml yaml = new Yaml();
             InputStream inputStream = ChromeOptionsReader.class
                     .getClassLoader()
-                    .getResourceAsStream("chrome_options.yml"); // Make sure it's in resources
+                    .getResourceAsStream("chrome_options.yml");
             if (inputStream == null) {
                 throw new RuntimeException("chrome_options.yml not found in resources.");
             }

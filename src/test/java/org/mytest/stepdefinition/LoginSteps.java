@@ -39,8 +39,7 @@ public class LoginSteps {
     @Then("the session-username cookie should have value {string}")
     public void theSessionUsernameCookieShouldHaveValue(String expectedValue) {
         Cookie sessionCookie = Driver.getDriver().manage().getCookieNamed("session-username");
-//        Assert.assertNotNull("Cookie 'session-username' should not be null", sessionCookie);
-//        Assert.assertEquals("Cookie value is not as expected", expectedValue, sessionCookie.getValue());
+        Assertions.assertEquals(expectedValue, sessionCookie.getValue(), "Cookie value is not as expected");
     }
 
     @Then("the local storage should have session-username value {string}")
@@ -48,7 +47,7 @@ public class LoginSteps {
         String localStorageValue = (String) ((org.openqa.selenium.JavascriptExecutor) Driver.getDriver())
                 .executeScript("return window.localStorage.getItem('session-username');");
         System.out.println("Local storage value: " + localStorageValue);
-//        Assert.assertEquals("Local storage value is not as expected", expectedValue, localStorageValue);
+//        Assertions.assertEquals("Local storage value is not as expected", expectedValue, localStorageValue);
     }
 
 
