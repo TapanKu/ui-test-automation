@@ -31,7 +31,7 @@ Feature: SauceDemo Login
 #    And the local storage should have session-username value "standard_user"
 
 
-  @smoke @test_04
+  @regression @test_04
   Scenario: Verify items in cart after re-login
     Given I login with username "standard_user" and password "secret_sauce"
     And I add the following items to the cart:
@@ -47,7 +47,7 @@ Feature: SauceDemo Login
       | Sauce Labs Backpack   |
       | Sauce Labs Bike Light |
 
-  @smoke @test_05
+  @regression @test_05
   Scenario: Verify items should not be in cart after logout and re-login with different user
     Given I login with username "standard_user" and password "secret_sauce"
     And I add the following items to the cart:
@@ -63,7 +63,7 @@ Feature: SauceDemo Login
       | Sauce Labs Backpack   |
       | Sauce Labs Bike Light |
 
-  @test_06 @regression
+  @test_06 @smoke
   Scenario: Verify checkout process
     Given I login with username "standard_user" and password "secret_sauce"
     And I add the following items to the cart:
