@@ -88,7 +88,7 @@ public class HomeSteps {
 
     @When("I get the price of all items")
     public void iGetThePriceOfAllItems() {
-        homePage.getAllItemsAndPrices();
+        homePage.getAllItemPrices();
     }
 
     @Then("I should get the sum of all items price is {string}")

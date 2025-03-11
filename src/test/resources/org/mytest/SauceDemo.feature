@@ -82,7 +82,7 @@ Feature: SauceDemo Login
     And I clicked on the finish button
     Then I should see the order confirmation message as "Thank you for your order!"
 
-  @test_07
+  @test_07  @regression
   Scenario: Verify sum of all items price
     Given I login with username "standard_user" and password "secret_sauce"
     When I get the price of all items

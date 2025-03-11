@@ -117,9 +117,9 @@ public class HomePage extends BasePage {
     }
 
     /**
-     * This method will get all the items and their prices
+     * This method will return all the item prices
      */
-    public List<Double> getAllItemsAndPrices() {
+    public List<Double> getAllItemPrices() {
         List<WebElement> elements = Driver.getDriver().findElements(By.xpath("//*[@class='inventory_item_price']"));
         List<Double> prices = new ArrayList<>();
         for (WebElement element : elements) {
@@ -133,7 +133,7 @@ public class HomePage extends BasePage {
     }
 
     public double getCalculateAllItemPrices() {
-        List<Double> prices = getAllItemsAndPrices();
+        List<Double> prices = getAllItemPrices();
         double sum = 0;
         for (Double price : prices) {
             sum += price;
