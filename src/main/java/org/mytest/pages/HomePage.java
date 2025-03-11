@@ -2,11 +2,13 @@ package org.mytest.pages;
 
 import org.mytest.helperUtils.CustomWebElement;
 import org.mytest.helperUtils.Driver;
+import org.mytest.helperUtils.Logger;
 import org.mytest.helperUtils.WaitUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -41,6 +43,7 @@ public class HomePage extends BasePage {
     private WebElement continueButton;
     @FindBy(id = "finish")
     private WebElement finishButton;
+
 
     public void logout() {
         if (menu_btn.isDisplayed()) {
@@ -112,4 +115,31 @@ public class HomePage extends BasePage {
         CustomWebElement confirmationMessage = customDriver.findElement(By.xpath("//*[contains(text(), 'Thank you for your order!')]"));
         return confirmationMessage.getText();
     }
+
+    /**
+     * This method will get all the items and their prices
+     */
+    public List<Double> getAllItemsAndPrices() {
+        List<WebElement> elements = Driver.getDriver().findElements(By.xpath("//*[@class='inventory_item_price']"));
+        List<Double> prices = new ArrayList<>();
+        for (WebElement element : elements) {
+            String itemPrice = element.getText();
+            itemPrice = itemPrice.replace("$", "");
+            Double price = Double.parseDouble(itemPrice);
+            prices.add(price);
+
+        }
+        return prices;
+    }
+
+    public double getCalculateAllItemPrices() {
+        List<Double> prices = getAllItemsAndPrices();
+        double sum = 0;
+        for (Double price : prices) {
+            sum += price;
+        }
+        Logger.info("Sum of all items is: " + sum);
+        return sum;
+    }
+
 }

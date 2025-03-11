@@ -85,4 +85,18 @@ public class HomeSteps {
         }
 
     }
+
+    @When("I get all the items and their price")
+    public void iGetAllTheItemsAndTheirPrice() {
+        homePage.getAllItemsAndPrices();
+
+    }
+
+    @Then("I should get the sum of all items price is {string}")
+    public void iShouldGetTheSumOfAllItemsPriceIs(String price) {
+        double expectedPrice = Double.parseDouble(price.replace("$", ""));
+        double actualPrice = homePage.getCalculateAllItemPrices();
+        Assertions.assertEquals(expectedPrice, actualPrice, "Sum of all items is not as expected");
+
+    }
 }
