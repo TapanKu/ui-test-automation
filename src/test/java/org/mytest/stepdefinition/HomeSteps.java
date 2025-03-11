@@ -86,10 +86,9 @@ public class HomeSteps {
 
     }
 
-    @When("I get all the items and their price")
-    public void iGetAllTheItemsAndTheirPrice() {
+    @When("I get the price of all items")
+    public void iGetThePriceOfAllItems() {
         homePage.getAllItemsAndPrices();
-
     }
 
     @Then("I should get the sum of all items price is {string}")
@@ -99,4 +98,6 @@ public class HomeSteps {
         Assertions.assertEquals(expectedPrice, actualPrice, "Sum of all items is not as expected");
 
     }
+
+
 }

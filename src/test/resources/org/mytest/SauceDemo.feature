@@ -83,7 +83,7 @@ Feature: SauceDemo Login
     Then I should see the order confirmation message as "Thank you for your order!"
 
   @test_07
-  Scenario: Verify the price of items for athe product and get sum of all items
+  Scenario: Verify sum of all items price
     Given I login with username "standard_user" and password "secret_sauce"
-    When I get all the items and their price
+    When I get the price of all items
     Then I should get the sum of all items price is "$129.94"
