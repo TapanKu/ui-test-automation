@@ -100,4 +100,11 @@ public class HomeSteps {
     }
 
 
+    @Then("I should see the price of the item {string} is {string}")
+    public void iShouldSeeThePriceOfTheItemIs(String itemName, String price) {
+        String actualItemName = homePage.getItemNameFromCart();
+        String actualItemPrice = homePage.getPriceFromAddedItemInCart();
+        Assertions.assertEquals(actualItemName, itemName, "Item name is not as expected");
+        Assertions.assertEquals(actualItemPrice, price, "Item price is not as expected");
+    }
 }

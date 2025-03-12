@@ -141,4 +141,13 @@ public class HomePage extends BasePage {
         return sum;
     }
 
+    public String getItemNameFromCart() {
+        CustomWebElement itemName = customDriver.findElement(By.xpath("//div[@class='inventory_item_name']"));
+        return itemName.getText();
+    }
+
+    public String getPriceFromAddedItemInCart() {
+        CustomWebElement itemPrice = customDriver.findElement(By.xpath("//div[@class='inventory_item_price']"));
+        return itemPrice.getText();
+    }
 }

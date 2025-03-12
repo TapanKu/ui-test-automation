@@ -1,5 +1,5 @@
 @web @Sauce-Demo
-Feature: SauceDemo Login
+Feature: Login and checkout process in SauceDemo application
 
   Background:
     Given I am on the SauceDemo login page
@@ -87,3 +87,13 @@ Feature: SauceDemo Login
     Given I login with username "standard_user" and password "secret_sauce"
     When I get the price of all items
     Then I should get the sum of all items price is "$129.94"
+
+  @test_08  @regression
+  Scenario: Verify the item price in the cart
+    Given I login with username "standard_user" and password "secret_sauce"
+    And I add the following items to the cart:
+      | itemName            |
+      | Sauce Labs Backpack |
+    Then I verify Add to Cart is changed to Remove for the item "Sauce Labs Backpack"
+    And I clicked on shopping cart icon
+    Then I should see the price of the item "Sauce Labs Backpack" is "$29.99"
