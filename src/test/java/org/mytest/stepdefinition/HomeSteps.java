@@ -94,7 +94,7 @@ public class HomeSteps {
     @Then("I should get the sum of all items price is {string}")
     public void iShouldGetTheSumOfAllItemsPriceIs(String price) {
         double expectedPrice = Double.parseDouble(price.replace("$", ""));
-        double actualPrice = homePage.getCalculateAllItemPrices();
+        double actualPrice = homePage.getSumOfAllItemsPrice();
         Assertions.assertEquals(expectedPrice, actualPrice, "Sum of all items is not as expected");
 
     }

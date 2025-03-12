@@ -67,7 +67,6 @@ public class HomePage extends BasePage {
             items.subList(1, items.size()).forEach(this::addItemToCart);
         }
 
-
     }
 
     public void clickCheckoutButton() {
@@ -125,17 +124,17 @@ public class HomePage extends BasePage {
         for (WebElement element : elements) {
             String itemPrice = element.getText();
             itemPrice = itemPrice.replace("$", "");
-            Double price = Double.parseDouble(itemPrice);
+            double price = Double.parseDouble(itemPrice);
             prices.add(price);
 
         }
         return prices;
     }
 
-    public double getCalculateAllItemPrices() {
+    public double getSumOfAllItemsPrice() {
         List<Double> prices = getAllItemPrices();
         double sum = 0;
-        for (Double price : prices) {
+        for (double price : prices) {
             sum += price;
         }
         Logger.info("Sum of all items is: " + sum);
