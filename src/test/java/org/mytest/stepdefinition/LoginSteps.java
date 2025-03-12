@@ -23,7 +23,13 @@ public class LoginSteps {
 
     @When("I login with username {string} and password {string}")
     public void iLoginWithUsernameAndPassword(String username, String password) {
-        loginPage.login(username, password);
+        String UserName = System.getProperty("username", username);
+        String Password = System.getProperty("password", password);
+        if (UserName.isEmpty() && Password.isEmpty()) {
+            UserName = username;
+            Password = password;
+        }
+        loginPage.login(UserName, Password);
     }
 
     @Then("I should be redirected to the inventory page")
